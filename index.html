@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Open Selected Links</title>
+</head>
+<body>
+    <form id="linkForm">
+        <input type="checkbox" name="links" value="https://kagi.com"> Kagi<br>
+        <input type="checkbox" name="links" value="https://duckduckgo.com"> DuckDuckGo<br>
+        <button type="button" onclick="openSelectedLinks()">Open</button>
+    </form>
+
+    <script>
+        function openSelectedLinks() {
+            const checkboxes = document.querySelectorAll('input[name="links"]:checked');
+            checkboxes.forEach((checkbox) => {
+                window.open(checkbox.value, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
